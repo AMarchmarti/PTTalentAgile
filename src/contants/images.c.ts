@@ -1,0 +1,1 @@
+export const picsum = 'https://picsum.photos';
