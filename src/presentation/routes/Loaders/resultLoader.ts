@@ -1,6 +1,7 @@
 import { Params, defer } from "react-router-dom";
-import { useCache } from "../../hooks/useCache/useCache.hook";
-import { getTimer } from "../../utils/Timer/timer";
+
+import { getTimer, TimerType } from "@/presentation/utils/Timer/timer";
+import { useCache } from "@/presentation/hooks/useCache/useCache.hook";
 
 
 
@@ -17,11 +18,9 @@ const ResultLoader = async ({ params }: { params: Params }) => {
 		resultPromise = await resultCache.get<ResultResponse>("result");
 	}
 
-	const result = resultPromise?.feed.entry.find(
-		(result) => result.id.attributes["im:id"] === params.id,
-	);
+	
 
-	return defer({ data: { result } });
+	return defer({ data: { resultPromise } });
 };
 
 export default ResultLoader;

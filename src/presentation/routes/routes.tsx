@@ -1,7 +1,9 @@
 import type { RouteObject } from "react-router-dom";
 
-import Layout from "@/presentation/components/Layout/Layout";
+
 import Home from "@/presentation/pages/Home/Home.page";
+import ResultLoader from "./Loaders/resultLoader";
+import Layout from "../components/Layout/Layout.component";
 
 
 export const routes: RouteObject[] = [
@@ -18,7 +20,7 @@ export const routes: RouteObject[] = [
 				loader: ResultLoader,
 				lazy: async () => {
 					const { ResultPage } = await import(
-						"@/presentation/pages/Results/Result.page"
+						"@/presentation/pages/Result/Result.page"
 					);
 					return { Component: ResultPage };
 				},

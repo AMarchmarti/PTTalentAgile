@@ -14,4 +14,4 @@ const formatTime = (milliseconds: number): string => {
 	const formattedSeconds = String(remainingSeconds).padStart(2, "0");
 	return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 };
-export { getTimer, formatTime };
+export { getTimer, formatTime, TimerType };

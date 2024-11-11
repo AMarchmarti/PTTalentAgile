@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useCache } from "./useCache.hook";
-import { getTimer } from "@/utils/Timer/timer";
-import { TimerType } from "@/utils/Timer/timer.d";
+import { getTimer, TimerType } from "@/presentation/utils/Timer/timer";
+
 
 beforeEach(() => {
 	vi.clearAllMocks();
