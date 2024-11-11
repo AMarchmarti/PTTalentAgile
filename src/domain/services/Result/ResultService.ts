@@ -1,19 +1,19 @@
 import getData  from "@/infrastructure/data/getData.js";
-import { AnimalData } from "../../model/Animal/AnimalData";
+import { ResultData } from "../../model/Result/ResultData";
 
-export class AnimalService {
+export class ResultService {
 
     /**
      * Retrieves animals based on the provided query.
      * @param query - The query string to filter animals by type or name.
-     * @returns A promise that resolves to an array of AnimalData objects matching the query.
+     * @returns A promise that resolves to an array of ResultData objects matching the query.
      * @throws If there is an error fetching the animals or handling the query.
      */
-    async getAnimalsByTypeOrName(query: string): Promise<AnimalData[]> {
+    async getResultsByTypeOrName(query: string): Promise<ResultData[]> {
         try {
           const response = await getData();
           const filteredData = response.filter(
-            (animal: AnimalData) => animal.type === query || animal.title.toLowerCase().includes(query.toLowerCase())
+            (animal: ResultData) => animal.type === query || animal.title.toLowerCase().includes(query.toLowerCase())
           );
           return filteredData;
         } catch (error) {

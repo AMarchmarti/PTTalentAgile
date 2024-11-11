@@ -1,6 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { AnimalData } from "@/domain/model/Animal/AnimalData";
-import { picsum } from "@/contants/images.c";
+import { ResultData } from "@/domain/model/Result/ResultData";
 
 /**
  * Generates a random image URL for an animal.
@@ -10,7 +9,7 @@ import { picsum } from "@/contants/images.c";
 const getRandomAnimalImage = (animalType: string): string => {
   const width = 644;
   const height = 362; 
-  const url = `${picsum}/${width}/${height}/animals/${animalType}`;
+  const url = faker.image.urlLoremFlickr({width, height, category: animalType});
   return url;
 }
 
@@ -48,8 +47,8 @@ const getTitle = (type: string): string => faker.animal[type as keyof typeof fak
  *
  * @returns An array of animal data objects.
  */
-const generateData = (): AnimalData[] => {
-  return [...new Array(100)].map((_, index): AnimalData => {
+const generateData = (): ResultData[] => {
+  return [...new Array(100)].map((_, index): ResultData => {
     const type = getType();
     return {
       type,
@@ -66,11 +65,11 @@ const generateData = (): AnimalData[] => {
  * Simulates an asynchronous request to retrieve animal data.
  * @returns A promise that resolves to an array of animal data.
  */
-const getData = (): Promise<AnimalData[]> => {
+const getData = (): Promise<ResultData[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(generateData());
-    }, 2000); // Simulates a delay (e.g., fetching from an API)
+    }, 2000); 
   });
 };
 

@@ -48,7 +48,7 @@ const SearchInput = ({button = true, initialValue, handleSearchInput}: SearchInp
         </div>
         {query && (
           <div
-            className="absolute right-16 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
             onClick={handleClear}
           >
             <FaTimes className="text-gray-400" />

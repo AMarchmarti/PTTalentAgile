@@ -1,4 +1,4 @@
-export type AnimalData = {
+export type ResultData = {
     type: string;
     id: number;
     url: string;

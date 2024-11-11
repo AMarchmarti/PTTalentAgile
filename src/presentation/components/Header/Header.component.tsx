@@ -3,12 +3,11 @@ import GoogleIcon from "../Icons/GoogleIcon";
 import SearchInput from "../SearchInput/SearchInput.component";
 import SquareGrid from "../SquareGrid/SquareGrid.component";
 import Avatar from "../Avatar/Avatar.component";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useNavigatorParams } from "@/presentation/hooks/useNavigatorParams/useNavigatorParams.hook";
 
 const Header = () => {
 	const navigate = useNavigate();
-	const location = useLocation();
     const searchParams = useNavigatorParams();
 	const search = searchParams.get("search") ?? "";
 	const handleSearch = (params: string) => {
@@ -21,7 +20,7 @@ const Header = () => {
 	return (
 		<header className="flex justify-between p-2 content-center shadow-md fixed top-0 left-0 w-full z-10 bg-white">
 			<div className="flex gap-2 items-center">
-				{location.pathname !== "/" ? (
+				{search.length ? (
 					<>
 						<GoogleIcon onClick={navigateToHome} />
 						<SearchInput button={false} handleSearchInput={(value) => handleSearch(value)} initialValue={search} />
