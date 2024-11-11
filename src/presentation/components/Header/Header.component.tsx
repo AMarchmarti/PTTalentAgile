@@ -19,7 +19,7 @@ const Header = () => {
         searchParams.remove("search");
     }
 	return (
-		<header className="flex justify-between p-2 content-center shadow-md fixed top-0 left-0 w-full">
+		<header className="flex justify-between p-2 content-center shadow-md fixed top-0 left-0 w-full z-10 bg-white">
 			<div className="flex gap-2 items-center">
 				{location.pathname !== "/" ? (
 					<>

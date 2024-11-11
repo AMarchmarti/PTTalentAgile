@@ -10,6 +10,7 @@ import { AnimalData } from "@/domain/model/Animal/AnimalData";
 const resultService = new AnimalService();
 
 const ResultLoader = async ({ params }: { params: Params }) => {
+	console.log('params', params)
 	const resultCache = useCache({ expiresIn: getTimer(24, TimerType.HOUR) });
 	let resultPromise: AnimalData[] | null;
 
