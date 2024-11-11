@@ -1,50 +1,84 @@
-# React + TypeScript + Vite
+# Project: Search Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+This project is a technical demonstration of my skills in React development, organization, and clean code practices. The goal is to implement a search application inspired by Google's search interface, incorporating functionality such as search input, result display, and detailed views of selected results.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. [Getting Started](#getting-started)
+2. [Architecture and Structure](#architecture-and-structure)
+3. [Features](#features)
+4. [Tecnologies](#tecnologies-used)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To run the PTTalentAgile Test locally, follow these steps:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clone the repository to your local machine:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    ```bash
+    git clone https://github.com/AMarchmarti/PTPodcast.git
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Navigate to the project directory:
+
+    ```bash
+    cd PTPodcast
+    ```
+
+3. Install dependencies using pnpm:
+
+    ```bash
+    pnpm install
+    ```
+
+4. Start the development server:
+
+    ```bash
+    pnpm dev
+    ```
+
+5. Run the tests:
+
+    ```bash
+    pnpm test
+    ```
+
+# Architecture and Structure
+
+The Podcast Explorer App follows a modular architecture and folder structure to keep the code organized and maintainable. Here's an overview of the main directories and files:
+
+-   **assets**: Stores assets such as images, fonts, or other static files used in the application.
+-   **constants**: Houses constant values or configurations used throughout the application.
+-   **presentation**:
+    -   **components**: Houses reusable UI components organized by feature or functionality.
+    -   **hooks**: Contains custom React hooks created for the application.
+    -   **pages**: Contains React components representing different pages/routes of the application.
+    -   **routes**: Contains configuration for routing using react-router-dom.
+-   **domain**: Contains model, repositories, and use cases.
+    -   **model**: Defines the core entities of the application.
+    -   **services**: Contains the business logic of the application.
+-   **infrastructure**: Contains services for interacting with external resources.
+    -   **http**: Implements concrete interactions with external services.
+    -   **utils**: Contains utility functions for handling API responses and other services.
+-   **utils**: Contains utility functions for app.
+
+# Features
+- **Google-Inspired Search Interface**: Includes a search bar with a dynamic layout, featuring a magnifying glass icon and a clear (X) button.
+- **Responsive Design**:
+  - On larger screens: A two-column layout where results occupy 2/3 of the screen and the detailed view occupies 1/3.
+  - On tablets and mobile devices: The detailed view opens as a modal, maintaining a user-friendly experience.
+- **Dynamic Loading**: Displays a skeleton loader while fetching search results.
+- **Modular Components**: Each part of the application (e.g., search bar, results, details view) is developed as an independent, reusable React component.
+- **Performance Optimization**: Leveraging `React.memo`, `useCallback`, and `useMemo` for optimal performance.
+- **Styling with TailwindCSS**: All styles are implemented using TailwindCSS, ensuring consistency and flexibility without relying on external UI libraries.
+
+# Technologies Used
+   - **React**: Component-based architecture for building a responsive and dynamic UI.  
+   - **TypeScript**: Ensures type safety and better maintainability of the codebase.  
+   - **Tailwind CSS**: Provides custom styling while maintaining design consistency and responsiveness.  
+   - **Vitest**: Fast unit testing to ensure code reliability.  
+   - **React Testing Library**: Simplifies testing of UI components and their behavior.
+
