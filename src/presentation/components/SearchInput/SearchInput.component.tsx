@@ -4,7 +4,7 @@ import { FaSearch, FaTimes } from "react-icons/fa";
 type SearchInputProps = {
     button?: boolean;
     initialValue?: string;
-    handleSearchInput: () => void;
+    handleSearchInput: (query: string) => void;
 }
 
 const SearchInput = ({button = true, initialValue, handleSearchInput}: SearchInputProps) => {
@@ -20,7 +20,7 @@ const SearchInput = ({button = true, initialValue, handleSearchInput}: SearchInp
 
   const handleSearch = () => {
     if (query) {
-        handleSearchInput()
+        handleSearchInput(query);
     }
   };
 
@@ -32,10 +32,10 @@ const SearchInput = ({button = true, initialValue, handleSearchInput}: SearchInp
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 flex-col">
+    <div className="flex items-center justify-center bg-gray-100 flex-col w-full">
       <div className="relative w-full max-w-lg">
         <input
-        data-testid="search-input"
+          data-testid="search-input"
           type="text"
           value={query}
           onChange={handleChange}
