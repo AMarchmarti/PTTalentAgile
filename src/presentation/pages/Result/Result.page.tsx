@@ -1,11 +1,15 @@
 import React from 'react'
 
-const ResultPage = () => {
-    return (
-        <div>
-            Results
-        </div>
-    )
-}
+export const ResultPage = () => {
 
-export default ResultPage
+    return (
+  
+      <div>
+  
+        <h1>Result Page</h1>
+  
+      </div>
+  
+    );
+  
+  };
