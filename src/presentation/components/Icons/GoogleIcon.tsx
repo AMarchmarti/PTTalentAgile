@@ -1,11 +1,13 @@
 import React from 'react'
 import IconProps from './IconProps';
-const GoogleIcon = ({height = "30", width= "92"}: IconProps) => {
+const GoogleIcon = ({height = "30", width= "92", onClick}: IconProps) => {
 	return (
 		<svg
 			height={height}
 			viewBox="0 0 92 30"
 			width={width}
+            className='cursor-pointer'
+            onClick={onClick}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path

@@ -32,7 +32,7 @@ const SearchInput = ({button = true, initialValue, handleSearchInput}: SearchInp
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-100 flex-col w-full">
+    <div className="flex items-center justify-center flex-col w-full">
       <div className="relative w-full max-w-lg">
         <input
           data-testid="search-input"
@@ -41,7 +41,7 @@ const SearchInput = ({button = true, initialValue, handleSearchInput}: SearchInp
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           placeholder="Buscar..."
-          className="w-full pl-10 pr-12 py-3 text-lg border border-gray-300 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full pl-10 pr-12 py-1 text-lg border border-gray-300 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
           <FaSearch className="text-gray-400" />

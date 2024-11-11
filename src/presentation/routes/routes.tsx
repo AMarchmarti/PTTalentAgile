@@ -17,7 +17,7 @@ export const routes: RouteObject[] = [
 				element: <Home />,
 			},
 			{
-				path: "/results",
+				path: "/result",
 				loader: ResultLoader,
 				lazy: async () => {
 					const { ResultPage } = await import(
